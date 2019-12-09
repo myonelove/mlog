@@ -1,0 +1,7 @@
+/src/.vs
+/src/MLog.Api/bin/*
+/src/MLog.Api/obj/*
+/src/MLog.Control/bin/*
+/src/MLog.Control/obj/*
+/src/MLog.Web/bin/*
+/src/MLog.Web/obj/*
