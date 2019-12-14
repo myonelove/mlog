@@ -5,3 +5,6 @@
 /src/MLog.Control/obj/*
 /src/MLog.Web/bin/*
 /src/MLog.Web/obj/*
+/src/MLog.Api/*
+/src/MLog.Control/*
+/src/MLog.Web/*

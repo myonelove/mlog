@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLog.Api", "MLog.Api\MLog.Api.csproj", "{D61488AA-B6CA-4EE3-B7DF-373991317E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLog.Api", "MLog.Api\MLog.Api.csproj", "{D61488AA-B6CA-4EE3-B7DF-373991317E73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{978BD5DF-6C48-413C-821F-C479C4872ADF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proj", "proj", "{972DABBE-4B0B-46A2-9E00-ADEE4E74D9B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLog.Web", "MLog.Web\MLog.Web.csproj", "{66EBBF9D-35C9-42FC-973D-9FC364993894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLog.Web", "MLog.Web\MLog.Web.csproj", "{66EBBF9D-35C9-42FC-973D-9FC364993894}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLog.Control", "MLog.Control\MLog.Control.csproj", "{658831C5-F0DA-485A-8DD9-3F42A924B6A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLog.Control", "MLog.Control\MLog.Control.csproj", "{658831C5-F0DA-485A-8DD9-3F42A924B6A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "md", "md", "{76717C20-8F95-4BCF-B1D8-7B18DB3A05CA}"
+	ProjectSection(SolutionItems) = preProject
+		..\doc\dbd.md = ..\doc\dbd.md
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
