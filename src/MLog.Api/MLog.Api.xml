@@ -1,0 +1,682 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MLog.Api</name>
+    </assembly>
+    <members>
+        <member name="T:MLog.Api.Controllers.AccessTokenController">
+            <summary>
+            Token相关控制器
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Controllers.AccessTokenController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Caching.Distributed.IDistributedCache,MLog.Api.Services.UserService)">
+            <summary>
+            Token相关控制器
+            </summary>
+            <param name="configuration"></param>
+            <param name="cache"></param>
+            <param name="userService"></param>
+        </member>
+        <member name="M:MLog.Api.Controllers.AccessTokenController.Register(MLog.Api.Models.Request.RegisterUserRequest)">
+            <summary>
+            注册用户
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Controllers.AccessTokenController.Login(MLog.Api.Models.LoginModel)">
+            <summary>
+            登录，获取后原来RefreshToken将失效。
+            AccessToken有效时间30分钟
+            RefreshToken有效时间60分钟
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Controllers.AccessTokenController.Refresh(MLog.Api.Controllers.AccessTokenController.RefreshTokenRequest)">
+            <summary>
+            刷新AccessToken
+            </summary>
+            <param name="request">刷新的请求 {"token": "refresh_token"}</param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Controllers.AccessTokenController.GetAccessToken(MLog.Api.Models.SessionUser)">
+            <summary>
+            通过SessionUser获取AccessToken
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Controllers.AccessTokenController.RefreshTokenRequest">
+            <summary>
+            刷新AccessToken的请求
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Controllers.AccessTokenController.RefreshTokenRequest.Token">
+            <summary>
+            RefreshToken，登录后获取
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Controllers.WeatherForecastController">
+            <summary>
+            WeatherForecastController
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{MLog.Api.Controllers.WeatherForecastController})">
+            <summary>
+            WeatherForecastController
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:MLog.Api.Controllers.WeatherForecastController.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="T:MLog.Api.Models.Database">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Database.LogDb">
+            <summary>
+            日志库
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Database.ManagerDb">
+            <summary>
+            邮件管理,用户管理,调度,其他周边库
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.Enums.ECode">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Enums.ECode.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Enums.ECode.Ok">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.Enums.ELogLevel">
+            <summary>
+            日志级别
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Enums.ELogLevel.DEBUG">
+            <summary>
+            debug 级别最低
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Enums.ELogLevel.INFO">
+            <summary>
+            info 重要，输出信息
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Enums.ELogLevel.WARN">
+            <summary>
+            warn ,严重
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Enums.ELogLevel.ERROR">
+            <summary>
+            error,相对严重
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Models.Enums.ELogLevel.FATAL">
+            <summary>
+            fatal, 非常严重
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.LogCategory">
+            <summary>
+            日志分类,日志分析统计维度表
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogCategory.CategoryId">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogCategory.Host">
+            <summary>
+            服务器地址
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogCategory.Service">
+            <summary>
+            服务
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogCategory.FullClass">
+            <summary>
+            全面类(命名空间+类)
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogCategory.Function">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogCategory.LogLevel">
+            <summary>
+            日志级别
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.LogInfo">
+            <summary>
+            日志相信信息
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogInfo.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogInfo.Message">
+            <summary>
+            日志信息
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogInfo.Detail">
+            <summary>
+            详细信息
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LogInfo.CreateTime">
+            <summary>
+            创建记录时间
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.LoginModel">
+            <summary>
+            登录的数据模型
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LoginModel.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.LoginModel.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.Middleware.JwtService">
+            <summary>
+            注册Jwt服务
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.JwtService.AddJwtService(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            注册JWT
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:MLog.Api.Models.Middleware.MongoService">
+            <summary>
+            注册MongoClient
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.MongoService.AddMongoClientService(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            注册Mongo Client 服务
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Models.Middleware.RabbitMQWorker">
+            <summary>
+            RabbitMQ 后台任务
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{MLog.Api.Models.Middleware.RabbitMQWorker})">
+            <summary>
+            RabbitMQ 后台任务 构造函数
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            执行任务
+            </summary>
+            <param name="stoppingToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.HandleMessage(System.String)">
+            <summary>
+            处理消息
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.OnConsumerConsumerCancelled(System.Object,RabbitMQ.Client.Events.ConsumerEventArgs)">
+            <summary>
+            有关消费者取消触发事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.OnConsumerUnregistered(System.Object,RabbitMQ.Client.Events.ConsumerEventArgs)">
+            <summary>
+            消费者未注册触发事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.OnConsumerRegistered(System.Object,RabbitMQ.Client.Events.ConsumerEventArgs)">
+            <summary>
+            消费者注册完后触发事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.OnConsumerShutdown(System.Object,RabbitMQ.Client.ShutdownEventArgs)">
+            <summary>
+            对消费者关闭触发事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.RabbitMQ_ConnectionShutdown(System.Object,RabbitMQ.Client.ShutdownEventArgs)">
+            <summary>
+            RabbitMQ连接关闭事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.RabbitMQWorker.Dispose">
+            <summary>
+            销毁
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.Middleware.SwaggerService">
+            <summary>
+            注册Swagger服务
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.SwaggerService.AddSwaggerSevice(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            注册swagger
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Models.Middleware.WebSocketWorker">
+            <summary>
+            WebSocket后台工作任务
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.WebSocketWorker.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{MLog.Api.Models.Middleware.WebSocketWorker})">
+            <summary>
+            WebSocket后台工作任务
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param> 
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.WebSocketWorker.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            开始任务
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.WebSocketWorker.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            停止任务
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Models.Middleware.WebSocketWorker.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            执行任务
+            </summary>
+            <param name="stoppingToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Models.Request.RegisterUserRequest">
+            <summary>
+            注册用户的请求参数
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.Request.RegisterUserRequest.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.Request.RegisterUserRequest.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.Request.RegisterUserRequest.Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.Request.RegisterUserRequest.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.Request.RegisterUserRequest.Createtime">
+            <summary>
+            创建时间
+            </summary> 
+        </member>
+        <member name="T:MLog.Api.Models.BasicsResponse`1">
+            <summary>
+            基础数据类型
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.BasicsResponse`1.#ctor">
+            <summary>
+            基础数据类型
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.BasicsResponse`1.#ctor(MLog.Api.Models.Enums.ECode)">
+            <summary>
+            基础数据类型
+            </summary>
+            <param name="code">ECode</param>
+        </member>
+        <member name="M:MLog.Api.Models.BasicsResponse`1.#ctor(MLog.Api.Models.Enums.ECode,System.String)">
+            <summary>
+            基础数据类型
+            </summary>
+            <param name="code">ECode</param>
+            <param name="message">message</param>
+        </member>
+        <member name="M:MLog.Api.Models.BasicsResponse`1.#ctor(MLog.Api.Models.Enums.ECode,`0)">
+            <summary>
+            基础数据类型
+            </summary>
+            <param name="code">ECode</param>
+            <param name="data">泛型</param>
+        </member>
+        <member name="P:MLog.Api.Models.BasicsResponse`1.Code">
+            <summary>
+            状态码
+            </summary> 
+        </member>
+        <member name="P:MLog.Api.Models.BasicsResponse`1.Message">
+            <summary>
+            消息描述
+            </summary> 
+        </member>
+        <member name="P:MLog.Api.Models.BasicsResponse`1.Data">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.UserResponse">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.UserResponse.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.UserResponse.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.UserResponse.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.UserResponse.Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.SessionUser">
+            <summary>
+            session user
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.SessionUser.Id">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.SessionUser.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.SessionUser.Email">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.SessionUser.Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Models.SessionUser.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Models.Util.DateTimeExtension">
+            <summary>
+            时间日期扩展方法
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.Util.DateTimeExtension.ConvertToLong(System.DateTime)">
+            <summary>
+            DateTime转时间戳
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Models.Util.DateTimeExtension.ConvertToDateTime(System.Int64)">
+            <summary>
+            时间戳转DateTime
+            </summary>
+            <param name="timestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Models.Util.EnumExtension">
+            <summary>
+            枚举扩展
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Models.Util.EnumExtension.Desc(System.Enum)">
+            <summary>
+            获取描述
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:MLog.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Services.UserService">
+            <summary>
+            用户服务
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Services.UserService.#ctor(MongoDB.Driver.MongoClient)">
+            <summary>
+            用户服务
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:MLog.Api.Services.UserService.Login(MLog.Api.Models.LoginModel)">
+            <summary>
+            登录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Services.UserService.Register(MLog.Api.Models.Request.RegisterUserRequest)">
+            <summary>
+            注册一个用户
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="T:MLog.Api.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MLog.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param> 
+        </member>
+        <member name="M:MLog.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param> 
+        </member>
+        <member name="T:MLog.Api.WeatherForecast">
+            <summary>
+            WeatherForecast
+            </summary>
+        </member>
+        <member name="P:MLog.Api.WeatherForecast.Date">
+            <summary>
+            Date
+            </summary>
+        </member>
+        <member name="P:MLog.Api.WeatherForecast.TemperatureC">
+            <summary>
+            TemperatureC
+            </summary>
+        </member>
+        <member name="P:MLog.Api.WeatherForecast.TemperatureF">
+            <summary>
+            TemperatureF
+            </summary>
+        </member>
+        <member name="P:MLog.Api.WeatherForecast.Summary">
+            <summary>
+            Summary
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Websockets.Handle.LogsHandle">
+            <summary>
+            日志处理
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Websockets.Handle.LogsHandle.AddLoadDefaultLogs(MLog.Api.Websockets.WebSocketRequest)">
+            <summary>
+            加载最新的20条日志信息(从数据库中加载)
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MLog.Api.Websockets.Handle.LogsHandle.AddPushNewLogs(MLog.Api.Websockets.WebSocketRequest)">
+            <summary>
+            推送最新的日志（rabbitmq推送过来的日志）
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MLog.Api.Websockets.Hub.LogHub">
+            <summary>
+            日志处理程序
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Websockets.Hub.LogHub.OnOpen">
+            <summary>
+            open
+            </summary>
+        </member>
+        <member name="M:MLog.Api.Websockets.Hub.LogHub.OnClose(WebSocketSharp.CloseEventArgs)">
+            <summary>
+            close
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:MLog.Api.Websockets.Hub.LogHub.OnError(WebSocketSharp.ErrorEventArgs)">
+            <summary>
+            error
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:MLog.Api.Websockets.Hub.LogHub.OnMessage(WebSocketSharp.MessageEventArgs)">
+            <summary>
+            message
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:MLog.Api.Websockets.RoutePath">
+            <summary>
+            路由路径
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Websockets.RoutePath.LoadDefaultLogs">
+            <summary>
+            加载默认的日志信息
+            </summary>
+        </member>
+        <member name="F:MLog.Api.Websockets.RoutePath.PushNewLogs">
+            <summary>
+            推送新的日志信息
+            </summary>
+        </member>
+        <member name="T:MLog.Api.Websockets.WebSocketRequest">
+            <summary>
+            websocket request class
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Websockets.WebSocketRequest.Route">
+            <summary>
+            路由路径 如："/push/logs" ,"/push/message" ...
+            </summary>
+        </member>
+        <member name="P:MLog.Api.Websockets.WebSocketRequest.Body">
+            <summary>
+            请求的数据
+            </summary>
+        </member>
+    </members>
+</doc>
